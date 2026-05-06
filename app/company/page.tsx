@@ -12,28 +12,28 @@ const companyInfo = [
 export default function CompanyPage() {
   return (
     <>
-      {/* Page Header */}
-      <div className="pt-32 pb-12 md:pt-40 md:pb-16" style={{ backgroundColor: "var(--gray)" }}>
+      <div className="pt-32 pb-16 md:pt-44 md:pb-20" style={{ backgroundColor: "var(--bg-2)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
-          <p className="section-subtitle mb-2">Company</p>
+          <p className="section-en mb-4">Company</p>
           <h1 className="section-title">会社概要</h1>
         </div>
       </div>
 
-      {/* Company Info */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24" style={{ backgroundColor: "var(--bg)" }}>
         <div className="container max-w-3xl">
           <table className="w-full border-collapse">
             <tbody>
               {companyInfo.map((row, i) => (
-                <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
+                <tr key={i} style={{ borderBottom: "1px solid var(--border)" }}>
                   <th
-                    className="py-5 pr-8 text-left text-xs font-medium align-top w-32 md:w-40"
-                    style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
+                    className="py-6 pr-8 text-left text-xs font-normal align-top w-32 md:w-40"
+                    style={{ color: "var(--gold)", letterSpacing: "0.05em" }}
                   >
                     {row.label}
                   </th>
-                  <td className="py-5 text-sm leading-relaxed">{row.value}</td>
+                  <td className="py-6 text-sm leading-relaxed" style={{ color: "var(--fg)" }}>
+                    {row.value}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -41,13 +41,17 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="pb-16 md:pb-24">
+      <section className="pb-20 md:pb-28" style={{ backgroundColor: "var(--bg)" }}>
         <div className="container max-w-3xl">
-          <h2 className="text-base font-semibold mb-4" style={{ color: "var(--green)" }}>アクセス</h2>
+          <h2
+            className="text-base font-light mb-6"
+            style={{ color: "var(--gold)", letterSpacing: "0.2em" }}
+          >
+            Access
+          </h2>
           <div
             className="w-full h-64 md:h-80 flex items-center justify-center text-sm"
-            style={{ backgroundColor: "var(--gray)", color: "var(--muted)" }}
+            style={{ backgroundColor: "var(--bg-3)", border: "1px solid var(--border)", color: "var(--fg-muted)" }}
           >
             Googleマップを埋め込み予定
           </div>

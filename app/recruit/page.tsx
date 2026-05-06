@@ -30,43 +30,49 @@ const positions = [
 export default function RecruitPage() {
   return (
     <>
-      {/* Page Header */}
-      <div className="pt-32 pb-12 md:pt-40 md:pb-16" style={{ backgroundColor: "var(--gray)" }}>
+      <div className="pt-32 pb-16 md:pt-44 md:pb-20" style={{ backgroundColor: "var(--bg-2)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
-          <p className="section-subtitle mb-2">Recruit</p>
+          <p className="section-en mb-4">Recruit</p>
           <h1 className="section-title">採用情報</h1>
         </div>
       </div>
 
-      {/* Message */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20" style={{ backgroundColor: "var(--bg)" }}>
         <div className="container max-w-3xl">
-          <h2 className="text-xl font-semibold mb-6" style={{ color: "var(--green)" }}>
+          <h2
+            className="text-xl font-light mb-6"
+            style={{ fontFamily: "'Noto Serif JP', serif", color: "var(--fg)", letterSpacing: "0.12em" }}
+          >
             一緒に、緑の仕事をしませんか。
           </h2>
-          <p className="text-sm leading-loose mb-4" style={{ color: "var(--muted)" }}>
+          <span className="gold-line mb-8 block" />
+          <p className="text-sm leading-loose mb-4" style={{ color: "var(--fg-muted)" }}>
             山口庭園では、共に働く仲間を募集しています。
             庭師の仕事に興味がある方、自然の中で働きたい方、
             経験者・未経験者どちらも歓迎します。
           </p>
-          <p className="text-sm leading-loose" style={{ color: "var(--muted)" }}>
+          <p className="text-sm leading-loose" style={{ color: "var(--fg-muted)" }}>
             少人数のチームなので、先輩から直接技術を学べる環境です。
             丁寧に指導しますので、はじめての方もご安心ください。
           </p>
         </div>
       </section>
 
-      {/* Positions */}
-      <section className="pb-16 md:pb-24">
+      <section className="pb-16 md:pb-24" style={{ backgroundColor: "var(--bg)" }}>
         <div className="container max-w-3xl">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-8">
             {positions.map((pos, i) => (
-              <div key={i} className="p-8 md:p-10" style={{ border: "1px solid var(--border)" }}>
-                <div className="flex items-center gap-3 mb-6">
-                  <h2 className="text-lg font-semibold">{pos.title}</h2>
+              <div key={i} className="p-8 md:p-10" style={{ backgroundColor: "var(--bg-2)", border: "1px solid var(--border)" }}>
+                <div className="flex items-center gap-4 mb-6">
+                  <h2
+                    className="text-lg font-light"
+                    style={{ fontFamily: "'Noto Serif JP', serif", color: "var(--fg)", letterSpacing: "0.08em" }}
+                  >
+                    {pos.title}
+                  </h2>
                   <span
-                    className="text-[10px] px-2 py-0.5"
-                    style={{ background: "var(--gray)", color: "var(--muted)", letterSpacing: "0.1em" }}
+                    className="text-[9px] tracking-widest px-2 py-0.5"
+                    style={{ border: "1px solid var(--border-light)", color: "var(--gold)" }}
                   >
                     {pos.type}
                   </span>
@@ -74,14 +80,14 @@ export default function RecruitPage() {
                 <table className="w-full border-collapse">
                   <tbody>
                     {pos.details.map((d, j) => (
-                      <tr key={j} className="border-b" style={{ borderColor: "var(--border)" }}>
+                      <tr key={j} style={{ borderBottom: "1px solid var(--border)" }}>
                         <th
-                          className="py-3 pr-6 text-left text-xs font-medium align-top w-24"
-                          style={{ color: "var(--muted)" }}
+                          className="py-4 pr-6 text-left text-xs font-normal align-top w-24"
+                          style={{ color: "var(--gold)" }}
                         >
                           {d.label}
                         </th>
-                        <td className="py-3 text-sm">{d.value}</td>
+                        <td className="py-4 text-sm" style={{ color: "var(--fg-muted)" }}>{d.value}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -92,18 +98,23 @@ export default function RecruitPage() {
         </div>
       </section>
 
-      {/* Apply CTA */}
-      <section className="py-16 text-white text-center" style={{ backgroundColor: "var(--green)" }}>
+      <section className="py-20 text-center" style={{ backgroundColor: "#080808" }}>
         <div className="container max-w-2xl">
-          <h2 className="text-xl font-semibold mb-4">応募・お問い合わせ</h2>
-          <p className="text-sm opacity-70 mb-8">
-            まずはお気軽にお問い合わせください。<br />
-            採用担当者が丁寧にご対応いたします。
+          <p className="section-en mb-4">Apply</p>
+          <h2
+            className="text-xl font-light mb-6"
+            style={{ fontFamily: "'Noto Serif JP', serif", color: "var(--fg)", letterSpacing: "0.15em" }}
+          >
+            応募・お問い合わせ
+          </h2>
+          <span className="gold-line mx-auto block mb-8" />
+          <p className="text-sm leading-loose mb-10" style={{ color: "var(--fg-muted)" }}>
+            まずはお気軽にお問い合わせください。採用担当者が丁寧にご対応いたします。
           </p>
           <Link
             href="/contact"
-            className="inline-block px-10 py-3 border border-white text-white text-xs uppercase hover:bg-white hover:text-green-900 transition-all duration-300"
-            style={{ letterSpacing: "0.25em" }}
+            className="inline-block px-12 py-4 text-[10px] tracking-[0.35em] uppercase transition-all duration-500 hover:bg-[var(--gold)] hover:text-[var(--bg)]"
+            style={{ border: "1px solid var(--gold)", color: "var(--gold)" }}
           >
             採用に応募する
           </Link>

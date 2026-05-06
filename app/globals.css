@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --green: #2d5016;
-  --green-light: #4a7c2f;
-  --gray: #f5f5f3;
-  --border: #e0e0dc;
-  --muted: #6b6b6b;
+  --bg: #0d0d0d;
+  --bg-2: #141414;
+  --bg-3: #1a1a1a;
+  --fg: #f0ede6;
+  --fg-muted: #888880;
+  --gold: #c8a96e;
+  --gold-light: #dfc08a;
+  --border: #2a2a2a;
+  --border-light: #333;
 }
 
 * {
@@ -21,28 +23,30 @@ html {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-  line-height: 1.8;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.9;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
   font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .section-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--green);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--fg);
 }
 
-.section-subtitle {
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
+.section-en {
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--gold);
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
 }
 
 .container {
@@ -55,4 +59,12 @@ h1, h2, h3, h4 {
   .container {
     padding: 0 3rem;
   }
+}
+
+/* 金のアクセントライン */
+.gold-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  display: block;
 }
